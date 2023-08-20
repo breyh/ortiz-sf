@@ -4,7 +4,7 @@ import logoWithOutBg from './logo-without-slogan.png'
 import sprayFoamOne from './spray-foam-1.jpg'
 import sprayFoamTwo from './spray-foam-2.jpg'
 import sprayFoamThree from './spray-foam-3.jpg'
-
+import cozyEnvironment from './cozy-environment.png'
 
 export {
     logoSloan,
@@ -13,4 +13,5 @@ export {
     sprayFoamOne,
     sprayFoamTwo,
     sprayFoamThree,
+    cozyEnvironment
 }

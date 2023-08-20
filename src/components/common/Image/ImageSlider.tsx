@@ -14,13 +14,13 @@ const useStyles = makeStyles((theme: IExtendedTheme) =>
             margin: '0 5px',
             cursor: 'pointer',
             transition: 'all 0.3s ease-in-out',
-          },
+        },
     }),
 );
 
 const ImageSlider = (props: any) => {
     const classes = useStyles();
-    const { images } = props;
+    const { images, showIndicators } = props;
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -46,7 +46,7 @@ const ImageSlider = (props: any) => {
                         height="350"
                         image={images[currentIndex]}
                     />
-                    <CardContent>
+                    {showIndicators ? <CardContent>
                         <Paper elevation={0}>
                             <Grid container justifyContent="center">
                                 {images.map((_: any, index: number) => (
@@ -55,14 +55,14 @@ const ImageSlider = (props: any) => {
                                             className={`${classes.dot} ${index === currentIndex ? 'active' : ''}`}
                                             onClick={() => handleDotClick(index)}
                                             style={{
-                                                backgroundColor: index === currentIndex ?'#007bff' : '#ccc'
+                                                backgroundColor: index === currentIndex ? '#007bff' : '#ccc'
                                             }}
                                         />
                                     </Box>
                                 ))}
                             </Grid>
                         </Paper>
-                    </CardContent>
+                    </CardContent> : null}
                 </Card>
             </Grid>
         </Grid>

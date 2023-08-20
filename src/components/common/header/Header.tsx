@@ -1,4 +1,4 @@
-import { Grid, Theme, Typography } from '@mui/material'
+import { Grid, Theme, Typography, Tooltip } from '@mui/material'
 import { makeStyles, createStyles } from '@mui/styles';
 import React from 'react'
 import { Link } from 'react-router-dom';
@@ -34,7 +34,7 @@ const Header = () => {
                     width: 60,
                     maxWidth: 100,
                 }} />
-                <Typography variant="h3" style={{ color: '#cf2d2d' }}>Ortiz Spray Foam Insulation, LLC.</Typography>
+                <Typography variant="h5" style={{ color: '#cf2d2d' }}>Ortiz Spray Foam Insulation, LLC.</Typography>
             </Grid>
             <Grid item xs={6} style={{
                 display: 'flex',
@@ -42,9 +42,15 @@ const Header = () => {
                 gap: 20,
                 alignItems: 'center'
             }}>
-                <Link to="Home" className={classes.links}>Home</Link>
-                <Link to="Home" className={classes.links}>Contact</Link>
-                <Link to="Home" className={classes.links}>About</Link>
+                <Tooltip title="Go home">
+                    <Link to="home" className={classes.links}>Home</Link>
+                </Tooltip>
+                <Tooltip title="Contact us">
+                    <Link to="contact" className={classes.links}>Contact</Link>
+                </Tooltip>
+                <Tooltip title="About us">
+                    <Link to="about" className={classes.links}>About</Link>
+                </Tooltip>
             </Grid>
         </Grid>
     )
